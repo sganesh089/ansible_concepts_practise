@@ -1,0 +1,14 @@
+master1 ansible_host=54.234.232.99 kubernetes_role=master
+node1 ansible_host=3.93.199.212 kubernetes_role=node
+node2 ansible_host=204.236.242.20 kubernetes_role=node
+
+[cluster]
+master1
+node1
+node2
+
+[cluster:vars]
+ansible_private_key_file=nashjay.pem
+ansible_ssh_user=ec2-user 
+
+

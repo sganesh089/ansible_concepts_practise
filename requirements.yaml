@@ -1,0 +1,18 @@
+# - src:
+#   name:
+#   version:
+roles:
+# - src: geerlingguy.docker
+#   name: geerlingguy.docker
+# - src: geerlingguy.k8s_manifests
+#   name: geerlingguy.k8s_manifests
+# - src: geerlingguy.helm
+#   name: geerlingguy.helm
+
+- src: geerlingguy.kubernetes
+  name: geerlingguy.kubernetes
+
+collections:
+- src: newswangerd.collection_demo
+  name: newswangerd.collection_demo
+
