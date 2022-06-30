@@ -4,6 +4,13 @@ Bought below course from Udemy for learning and practising Ansible concepts:
 
 Complete Ansible Bootcamp: Go from zero to hero in Ansible  by abdennour
 
+https://www.udemy.com/course/ansible-hero/
+
+![image](https://user-images.githubusercontent.com/41573564/176576474-f91805e7-de98-4382-b362-0af87fa85667.png)
+
+
+
+
 Was very engaging and a practical course to learn the concepts and practically experience the concepts in AWS environment.
 
 I deplooyed all the learnings from my local machine to AWS servers. 
