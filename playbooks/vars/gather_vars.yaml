@@ -1,0 +1,12 @@
+Distribution: "{{ ansible_facts.distribution  }}"
+Distribution Release: "{{ ansible_facts.distribution_release }}"
+Distribution Version  : "{{ ansible_facts.distribution_version }}"
+Nbre CPU core  : "{{ ansible_facts.processor_cores }}"
+Total Memory   : "{{ ansible_facts.memtotal_mb }}"
+
+
+{% if ansible_facts.distribution_release == 'ubuntu' %}
+ Ths OS is ubuntu
+{% else %}
+  Not ubuntu
+{% endif %}  

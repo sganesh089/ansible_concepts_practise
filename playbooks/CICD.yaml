@@ -1,0 +1,27 @@
+- name: install webserver
+  become: yes
+  hosts: ec2
+  vars: 
+    webserver: nginx
+    webserver_path: /var/www/html
+    git_hub: master
+  tasks: 
+  - name:  debug
+    debug:
+      msg: "value of webserver is {{ webserver }}"
+  - name: webserver is installed
+    package:
+      name: "{{ webserver }}" 
+      state: present
+  - name: webserver state
+    service:
+      name: "{{ webserver }}" 
+      state: started
+  - name: check root directory /var/www/html is created
+    file:
+      path: "{{ webserver_path }}"
+      state: directory
+  - name: create static content
+    uri:
+      url: https://raw.githubusercontent.com/sganesh089/ansible/{{ git_hub }}/index.html
+      dest: "{{ webserver_path }}"

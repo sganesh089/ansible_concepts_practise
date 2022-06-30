@@ -1,0 +1,10 @@
+- name: delegate task
+  become: yes
+  hosts: dev1
+  tasks:
+  - name: copy file to local instead of dev
+    copy:
+      content: " hi there"
+      dest: /tmp/dele.txt
+    delegate_to: localhost 
+ 

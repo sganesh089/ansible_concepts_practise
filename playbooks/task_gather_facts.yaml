@@ -1,0 +1,14 @@
+- name: gather facts task
+  hosts: all
+  become: yes
+  tasks:
+  - name: copy gathered_facts
+    copy:
+      content: |
+        Distribution: {{ ansible_facts.distribution }}
+        Distribution Release: {{ ansible_facts.distribution_release }}
+        Distribution Version  : {{ ansible_facts.distribution_version }}
+        Nbre CPU core  : {{ ansible_facts.processor_cores }}
+        Total Memory   : {{ ansible_facts.memtotal_mb }}
+      dest: /tmp/specs.report
+      

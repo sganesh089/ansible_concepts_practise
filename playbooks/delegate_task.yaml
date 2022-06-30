@@ -1,0 +1,12 @@
+- name: delegate task
+  become: yes
+  hosts: dev1
+  tasks:
+  - name: Connect to website using a previously stored cookie
+    uri:
+      url: https://api.github.com/users/sganesh089/repos
+      method: GET
+      return_content: yes
+      dest: /tmp/task.txt
+    delegate_to: localhost 
+ 

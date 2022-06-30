@@ -1,0 +1,16 @@
+- name: install webserver
+  become: yes
+  hosts: prod,dev
+  vars: 
+    webserver: nginx
+    webserver_path: /var/www/html
+  tasks: 
+  - name: import_tasks module
+    import_tasks: tasks/import_tasks.yaml
+  - name: create static content
+    uri:
+      url: https://raw.githubusercontent.com/sganesh089/ansible/{{ git_hub }}/index.html
+      dest: "{{ webserver_path }}"
+
+    
+    

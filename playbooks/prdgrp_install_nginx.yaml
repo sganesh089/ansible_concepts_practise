@@ -1,0 +1,9 @@
+- name: install nginx in prod group
+  hosts: prod
+  become : yes
+  tasks:
+  - name: install nginx
+    package:
+      name: nginx
+      state: present
+ 

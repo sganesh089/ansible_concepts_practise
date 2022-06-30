@@ -1,0 +1,13 @@
+- name: gather facts example
+  hosts: ec2
+  become: yes
+  tasks:
+  - name: gather facts var
+    debug:
+      var: ansible_facts
+  - name: copy gathered_facts
+    copy:
+      content: "{{ ansible_facts }}"
+      dest: /tmp/gathere_facts
+      
+  

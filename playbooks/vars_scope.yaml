@@ -1,0 +1,11 @@
+- name: install webserver
+  become: yes
+  hosts: ec2
+  vars_files:
+  - vars/rep_vars.yaml
+
+  tasks: 
+  - name:  debug
+    debug:
+      msg: "value of webserver is {{ webserver }}"
+  

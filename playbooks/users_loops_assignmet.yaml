@@ -1,0 +1,13 @@
+- name: create users task
+  become: yes
+  hosts: prod,dev
+  vars_files:
+  - vars/assignment_users.yaml
+  tasks: 
+  - name: Add users as per condition
+    user:
+      name: "{{ item.name }}"
+      state: present
+    loop: "{{ assignment_user }}"      
+    when: (item.role == 'developer' and 'dev' in group_names) or (item.role == 'ops' and 'prod' in group_names) 
+

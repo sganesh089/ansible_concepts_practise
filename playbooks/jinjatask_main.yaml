@@ -1,0 +1,9 @@
+- name: jinja main task
+  hosts: dev
+  become: yes
+  tasks:
+  - name: copy files to remote
+    template:
+      src: host.j2
+      dest: /etc/hosts 
+

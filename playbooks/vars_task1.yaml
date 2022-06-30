@@ -1,0 +1,17 @@
+- name: task1 to add user
+  become: yes
+  hosts: ec2
+  vars_files:
+  - vars/user.yaml
+  tasks:
+  - name: create group
+    group:
+      name: "{{ assignment_group }}"
+      state: present 
+  - name: Add the user 'johnd' with a specific uid and a primary group of 'admin'
+    ansible.builtin.user:
+      name: "{{ assignment_user_name }}"
+      comment: John Doe
+      uid: "{{ assignment_user_id }}"
+      group: "{{ assignment_group }}"
+      append: yes

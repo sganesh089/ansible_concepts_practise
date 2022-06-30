@@ -1,0 +1,25 @@
+#ansible app1.company.com -m user -a "name=odoo state=present"
+
+- name: copy
+  hosts: app1.company.com
+  tasks:
+    user:
+      name: "odoo"
+      state: present 
+
+#ansible all -m file  -a "path=/opt/data state=directory"
+
+#ansible all -m copy -a "content='TopSecret' dest='/opt/data/secret.txt'"
+
+- name: create directory
+  hosts: all
+  tasks:
+    file:
+      path: "/opt/data"
+      state: directory
+- name: copy content
+  hosts: all
+  tasks:
+    copy:
+      content: "TopSecret"
+      dest: "/opt/data/secret.txt"

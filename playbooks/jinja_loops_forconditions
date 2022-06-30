@@ -1,0 +1,11 @@
+##print app pages
+
+{% for u in app_pages %}
+   {{ u }}.html is working
+{% endfor %}
+## print app users
+
+{% for u in app_users %}
+   {{ u.name | capitalize }} is a {{ u.role }}
+{% endfor %}
+

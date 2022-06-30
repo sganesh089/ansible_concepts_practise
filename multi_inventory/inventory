@@ -1,0 +1,16 @@
+ec2 ansible_host=54.165.54.82 ansible_private_key_file=./ansibleuser ansible_ssh_user=ansibleuser
+ec2 ansible_host=44.202.20.172 ansible_private_key_file=./ansibleuser ansible_ssh_user=ansibleuser
+ec2 ansible_host=44.204.231.90 ansible_private_key_file=./ansibleuser ansible_ssh_user=ansibleuser
+
+### ssh -i "nashjay.pem" ubuntu@ec2-52-91-189-101.compute-1.amazonaws.com
+
+dev1 
+prod1
+prod2
+
+[dev]
+dev1
+
+[prod]
+prod1
+prod2

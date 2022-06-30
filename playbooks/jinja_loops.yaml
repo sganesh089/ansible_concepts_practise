@@ -1,0 +1,21 @@
+- name: jinja loops for conditions
+  hosts: dev
+  become: yes
+  vars:
+    app_pages:
+    - home
+    - login
+    - logout
+    app_users:
+    - name: ahmed
+      role: developer
+    - name: ganesh
+      role: ops
+    - name: natti
+      role: ops
+  tasks:
+  - name: copy files to remote
+    template:
+      src: jinja_loops_forconditions
+      dest: /tmp/test1.txt  
+

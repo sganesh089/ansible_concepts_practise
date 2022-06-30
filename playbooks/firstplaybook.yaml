@@ -1,0 +1,21 @@
+- name: copy and archive task
+  hosts: ec2
+  tasks: 
+  - name: copy file 1
+    copy:
+      content: "Hello" 
+      dest: "/tmp/hello.txt"
+  - name: copy file 2
+    copy:
+      content: "Hi" 
+      dest: "/tmp/hi.txt"    
+  - name: archive file
+    archive:
+      path:
+        - /tmp/hello.txt
+        - /tmp/hi.txt
+      dest: /tmp/first.zip
+      format: zip  
+
+
+

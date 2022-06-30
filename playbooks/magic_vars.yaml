@@ -1,0 +1,17 @@
+- name: print magic vars
+  hosts: all
+  become: yes
+  tasks:
+  - name: call magic vars
+    debug:
+      var: inventory_hostname
+
+  - name: call magic vars
+    debug:
+      var: hostvars
+  - name: call magic vars
+    debug:
+      var: group_names
+  - name: call magic vars
+    debug:
+      var: groups   

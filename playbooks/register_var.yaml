@@ -1,0 +1,16 @@
+- name: practice register
+  become: yes
+  hosts: ec2
+  tasks: 
+  - name: webserver is installed
+    package:
+      name: nginx
+      state: present
+    register: nginx_status
+  - name:  debug
+    debug:
+      var: nginx_status
+  - name: copy var value
+    copy:
+      content: "{{ nginx_status }}"
+      dest: /tmp/register_val

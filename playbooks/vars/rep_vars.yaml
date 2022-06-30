@@ -1,0 +1,2 @@
+webserver: nginx
+webserver_path: /var/www/html

@@ -1,0 +1,12 @@
+- name: webserver is installed
+  package:
+    name: "{{ webserver }}" 
+    state: present
+- name: webserver state
+  service:
+    name: "{{ webserver }}" 
+    state: started
+- name: check root directory /var/www/html is created
+  file:
+    path: "{{ webserver_path }}"
+    state: directory

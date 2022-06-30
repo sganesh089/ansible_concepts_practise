@@ -1,0 +1,9 @@
+- name: jinja copy
+  hosts: dev
+  become: yes
+  tasks:
+  - name: copy files to remote
+    template:
+      src: vars/gather_vars.yaml
+      dest: /tmp/test.txt  
+

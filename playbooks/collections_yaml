@@ -1,0 +1,12 @@
+- name: use collections
+  hosts: dev1
+  become: true
+  collections:
+  - newswangerd.collection_demo
+  tasks:
+  - name: test modules
+    real_facts:
+      name: ganesh
+  - name: test roles
+    import_role:
+      name: deltoid
